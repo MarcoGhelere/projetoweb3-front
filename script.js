@@ -96,6 +96,10 @@ function validate(event){
 
 }
 
+function register() {
+    
+}
+
 if(localStorage.getItem("token") != null) {
     document.getElementById("searchtext").classList.add("turnvisible");
     document.getElementById("logout-button").classList.add("turnvisible");
