@@ -293,6 +293,19 @@ input {
     background-color: rgb(90, 146, 90);
 }
 
+.sign-btn{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: darkgoldenrod;
+    color: white;
+    align-self: center;
+}
+
+.sign-btn:hover{
+    background-color: rgb(90, 146, 90);
+}
+
 .login-itens {
     /* background-color: blue; */
 }
@@ -341,12 +354,62 @@ input {
     font-weight: bold;
 }
 
-.turnvisible {
-    display: flex;
+.register {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* width: 100%; */
 }
 
-.turninvisible{
-    display: none;
+.register-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register p{
+    font: 500 1rem 'Rubik', sans-serif;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px 0 10px 0;
+    /* background-color: red; */
+}
+
+.register-btn{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: green;
+    color: white;
+    align-self: center;
+}
+
+.register-btn:hover{
+    background-color: rgb(90, 146, 90);
+}
+
+.return-btn{
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: darkkhaki;
+    color: white;
+    align-self: center;
+}
+
+.return-btn:hover{
+    background-color: rgb(90, 146, 90);
 }
 
 .conteudo-nome {
@@ -376,6 +439,14 @@ input {
     font-size: 16px;
     align-self: center;
     margin-bottom: 10px;
+}
+
+.turnvisible {
+    display: flex !important;
+}
+
+.turninvisible{
+    display: none !important;
 }
 
 @media (max-width: 1200px) {

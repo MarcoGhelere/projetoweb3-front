@@ -101,3 +101,26 @@ if(localStorage.getItem("token") != null) {
     document.getElementById("logout-button").classList.add("turnvisible");
     document.getElementById("form-login").classList.add("turninvisible");
 }
+
+function gotoregister(){
+    document.getElementById("register").classList.add("turnvisible");
+    document.getElementById("form-login").classList.add("turninvisible");
+    document.getElementById("sign-btn").classList.add("turninvisible");
+    
+    console.log("gotoregister registrado");
+}
+
+function register() {
+    
+}
+
+function returnhome() {
+    // document.getElementById("form-login").classList.add("turnvisible");
+    // document.getElementById("sign-btn").classList.add("turnvisible");
+    // document.getElementById("register").classList.add("turninvisible");
+
+    window.location.reload();
+
+    console.log("returnhome registrado");
+
+}
