@@ -12,7 +12,7 @@ function login(event){
     //"email": "eve.holt@reqres.in",
     //"password": "cityslicka"
 
-    fetch('https://reqres.in/api/login', {
+    fetch('http://localhost:3000/login/login', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -96,8 +96,42 @@ function validate(event){
 
 }
 
-function register() {
+function register(event) {
+    event.preventDefault();
+
+    const data = {
+        "email": document.getElementById("email-input-reg").value,
+        "password": document.getElementById("password-input-reg").value,
+    };
     
+    fetch('http://localhost:3000/login/register', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            
+            if(!data.error){
+                //Caso nao haja erro no login, ira aparecer a barra de pesquisa:
+                localStorage.setItem("token", data.token);
+
+                document.getElementById("searchtext").classList.add("turnvisible");
+                document.getElementById("logout-button").classList.add("turnvisible");
+                document.getElementById("register").classList.add("turninvisible");
+            }
+            else {
+                document.getElementById("error-login").classList.add("turnvisible");
+            }
+            
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            
+        });
 }
 
 if(localStorage.getItem("token") != null) {
@@ -112,10 +146,6 @@ function gotoregister(){
     document.getElementById("sign-btn").classList.add("turninvisible");
     
     console.log("gotoregister registrado");
-}
-
-function register() {
-    
 }
 
 function returnhome() {
