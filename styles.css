@@ -240,7 +240,7 @@ nav a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0 50px 0;
+    padding: 50px 0 20px 0;
 }
 
 .error-login {
@@ -369,9 +369,24 @@ input {
     width: 60%;
     align-self: center;
 
+    margin-top: 60px;
+
     /* width: 100%; */
 }
 
+.msg-char-success {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.character-success {
+    color: lightgreen;
+    font: 500 1rem 'Rubik', sans-serif;
+    font-size: 20px;
+    align-self: center;
+    padding: 10px;
+}
 .character-btn {
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
@@ -379,7 +394,7 @@ input {
     background-color: lightblue;
     color: black;
     align-self: center;
-    margin: 10px;
+    margin: 20px 0 50px 0;
 }
 
 .character-btn:hover {

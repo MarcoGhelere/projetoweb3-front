@@ -116,7 +116,10 @@
                     <button type="submit" class="botao-consulta">CONSULTAR</button>
     
                 </form>
-                <form class="add-character" id="add-character" onsubmit="addCharacter()">
+                <form class="add-character" id="add-character" onsubmit="addCharacter(event)">
+                    <div class="msg-char-success" id="msg-char-success">
+                        <span class="character-success" id="character-success">Character created!</span>
+                    </div>
                     <input type="text" class="input-character" id="input-character" required></input>
                     <button type="submit" class="character-btn">SUBMIT CHARACTER</button>
                 </form>

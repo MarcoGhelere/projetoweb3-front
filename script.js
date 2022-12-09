@@ -160,6 +160,40 @@ function returnhome() {
 
 }
 
-function addCharacter() {
+function addCharacter(event) {
 
+    event.preventDefault();
+
+    const data = {"name": document.getElementById("input-character").value};
+
+    fetch('http://localhost:3000/addcharacter/', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+            'token': localStorage.getItem("token"),
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            
+            if(!data.error){
+                document.getElementById("msg-char-success").classList.add("turnvisible");
+                setTimeout(successInvisible, 5000);
+            }
+            else {
+
+            }
+            
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            
+        });
+}
+
+function successInvisible() {
+    document.getElementById("msg-char-success").classList.remove("turnvisible");
+    document.getElementById("input-character").value = "";
 }
