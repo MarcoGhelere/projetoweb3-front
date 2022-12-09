@@ -124,7 +124,7 @@ function register(event) {
                 document.getElementById("register").classList.add("turninvisible");
             }
             else {
-                document.getElementById("error-login").classList.add("turnvisible");
+                document.getElementById("error-register").classList.add("turnvisible");
             }
             
         })

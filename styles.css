@@ -408,6 +408,14 @@ input {
     align-self: center;
 }
 
+.error-register {
+    color: red;
+    font: 500 1rem 'Rubik', sans-serif;
+    font-size: 20px;
+    align-self: center;
+    display: none;
+}
+
 .return-btn:hover{
     background-color: rgb(90, 146, 90);
 }

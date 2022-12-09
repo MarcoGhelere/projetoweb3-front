@@ -82,7 +82,7 @@
                 <div class="line"></div>
             </div>
 
-            <div class="login-box">
+            <div class="login-box" id="login-box">
                 <span class="error-login" id="error-login">Usuário não encontrado, tente usar o seguinte e-mail: eve.holt@reqres.in</span>
                 <form class="form-login" id="form-login" onsubmit="login(event)">
                     
@@ -94,30 +94,35 @@
                     </div>
                     <button type="submit" class="submit-btn">LOGIN</button>
                     
+                    <button type="button" class="sign-btn" id="sign-btn" onclick="gotoregister()">SIGN UP</button>
                 </form>
-                <button class="sign-btn" id="sign-btn" onclick="gotoregister()">SIGN UP</button>
-
+                
                 <button class="logout-button" id="logout-button" onclick="logout()">LOGOUT</button>
             </div>
             <!-- <input type="search" name="" id="searchbar" class="searchbar"> -->
-            <form class="searchtext" id="searchtext" onsubmit="validate(event)">
-                <input name="" id="searchbar" class="searchbar" cols="30" rows="10" placeholder="Digite um nome de um personagem de Star Wars:" required></input>
-                
-                <div class="conteudo-nome" conteudo-nome></div>
-                <p class="search-error" id="search-error">Não foi encontrado nenhum personagem com esse nome!</p>
-                <template resultado-pesquisa>
-                        
-                        <label class="label-nome">Nome: </label>
-                        <p class="texto-nome"></p>
-                </template>
-                
-                <button type="submit" class="botao-consulta">CONSULTAR</button>
 
-            </form>
+            <div class="searcharea" id="searcharea">
+                <form class="searchtext" id="searchtext" onsubmit="validate(event)">
+                    <input name="" id="searchbar" class="searchbar" cols="30" rows="10" placeholder="Digite um nome de um personagem de Star Wars:" required></input>
+                    
+                    <div class="conteudo-nome" conteudo-nome></div>
+                    <p class="search-error" id="search-error">Não foi encontrado nenhum personagem com esse nome!</p>
+                    <template resultado-pesquisa>
+                            
+                            <label class="label-nome">Nome: </label>
+                            <p class="texto-nome"></p>
+                    </template>
+                    
+                    <button type="submit" class="botao-consulta">CONSULTAR</button>
+    
+                </form>
+            </div>
+            
 
             <div class="register" id="register">
                 <form class="register-form" id="register-form" onsubmit="register(event)">
                     <div class="register-itens">
+                        <span class="error-register" id="error-register">Usuário já está cadastrado</span>
                         <p>Let's create a new account for you:</p>
                         <p>E-mail:</p>
                         <input type="email" class="email-input-reg" placeholder="email@email.com" id="email-input-reg" minlength="3" required>
