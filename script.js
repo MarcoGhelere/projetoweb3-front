@@ -9,9 +9,6 @@ function login(event){
         "password": document.getElementById("password-input").value,
     };
 
-    //"email": "eve.holt@reqres.in",
-    //"password": "cityslicka"
-
     fetch('http://localhost:3000/login/login', {
         method: 'POST', // or 'PUT'
         headers: {
