@@ -27,7 +27,7 @@ function login(event){
                 //Caso nao haja erro no login, ira aparecer a barra de pesquisa:
                 localStorage.setItem("token", data.token);
 
-                document.getElementById("searchtext").classList.add("turnvisible");
+                document.getElementById("searcharea").classList.add("turnvisible");
                 document.getElementById("logout-button").classList.add("turnvisible");
                 document.getElementById("form-login").classList.add("turninvisible");
                 document.getElementById("error-login").classList.add("turninvisible")
@@ -120,7 +120,7 @@ function register(event) {
                 //Caso nao haja erro no login, ira aparecer a barra de pesquisa:
                 localStorage.setItem("token", data.token);
 
-                document.getElementById("searchtext").classList.add("turnvisible");
+                document.getElementById("searcharea").classList.add("turnvisible");
                 document.getElementById("logout-button").classList.add("turnvisible");
                 document.getElementById("register").classList.add("turninvisible");
             }
@@ -136,7 +136,7 @@ function register(event) {
 }
 
 if(localStorage.getItem("token") != null) {
-    document.getElementById("searchtext").classList.add("turnvisible");
+    document.getElementById("searcharea").classList.add("turnvisible");
     document.getElementById("logout-button").classList.add("turnvisible");
     document.getElementById("form-login").classList.add("turninvisible");
 }

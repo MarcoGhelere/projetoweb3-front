@@ -287,6 +287,7 @@ input {
     background-color: green;
     color: white;
     align-self: center;
+    margin: 20px;
 }
 
 .submit-btn:hover{
@@ -310,12 +311,20 @@ input {
     /* background-color: blue; */
 }
 
-.searchtext {
+.searcharea {
     display: none;
     flex-direction: column;
+    justify-content: center;
 
     /* width: 100%; */
 }
+
+.searchtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .search-error {
     color: red;
     font: 500 1rem 'Rubik', sans-serif;
@@ -323,7 +332,6 @@ input {
     align-self: center;
     display: none;
     margin-bottom: 15px;
-    
 }
 
 .searchbar {
@@ -352,6 +360,31 @@ input {
     color: white;
     align-self: center;
     font-weight: bold;
+}
+
+.add-character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    align-self: center;
+
+    /* width: 100%; */
+}
+
+.character-btn {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    background-color: lightblue;
+    color: black;
+    align-self: center;
+    margin: 10px;
+}
+
+.character-btn:hover {
+    background-color: blue;
+    color: white;
 }
 
 .register {
@@ -393,6 +426,7 @@ input {
     background-color: green;
     color: white;
     align-self: center;
+    margin: 10px;
 }
 
 .register-btn:hover{
@@ -406,6 +440,12 @@ input {
     background-color: darkkhaki;
     color: white;
     align-self: center;
+    margin: 10px;
+}
+
+.return-btn:hover{
+    background-color: white;
+    color: black;
 }
 
 .error-register {
@@ -414,10 +454,6 @@ input {
     font-size: 20px;
     align-self: center;
     display: none;
-}
-
-.return-btn:hover{
-    background-color: rgb(90, 146, 90);
 }
 
 .conteudo-nome {
