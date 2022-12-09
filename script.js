@@ -56,7 +56,7 @@ function validate(event){
     event.preventDefault();
 
     const search = document.getElementById("searchbar").value;
-    const urlapi= "https://swapi.dev/api/people/?search=" + search; //Passando o link para a API
+    const urlapi= "http://localhost:3000/swapi/?name=" + search; //Passando o link para a API
 
     const resultadoPesquisa = document.querySelector("[resultado-pesquisa]");
     const containerNome = document.querySelector("[conteudo-nome]");
@@ -67,25 +67,26 @@ function validate(event){
         method: 'GET', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
+            'token': localStorage.getItem("token"),
         },
     })
     .then((response) => response.json())
     .then((data) => {
         console.log('Success:', data);
 
-        if(data.count == 0) {
+        if(data.length == 0) {
             document.getElementById("search-error").classList.add("turnvisible");
             console.log('No character found');
             
         }
         else {
-            data.results.forEach(personagem => {
+            data.forEach(personagem => {
                 const nomeResultado = resultadoPesquisa.content.cloneNode(true);
                 nomeResultado.children[1].innerHTML = personagem.name;
                 containerNome.append(nomeResultado);
             });
             
-            console.log('Success:', data.results[0].name);
+            //console.log('Success:', data.results[0].name);
             document.getElementById("search-error").classList.remove("turnvisible");
             //const resultado = resultadoPesquisa.content.cloneNode(true);
         }
@@ -156,5 +157,9 @@ function returnhome() {
     window.location.reload();
 
     console.log("returnhome registrado");
+
+}
+
+function addCharacter() {
 
 }
