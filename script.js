@@ -1,4 +1,4 @@
-const serverlink = "http://localhost:3000/";
+const serverlink = "https://projetoweb3.onrender.com/";
 
 function login(event){
     //Codigo da funcao fetch, obtida de: 
