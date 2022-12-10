@@ -80,6 +80,7 @@ function validate(event){
             data.forEach(personagem => {
                 const nomeResultado = resultadoPesquisa.content.cloneNode(true);
                 nomeResultado.children[1].innerHTML = personagem.name;
+                nomeResultado.children[2].src = personagem.link;
                 containerNome.append(nomeResultado);
             });
             
@@ -161,15 +162,21 @@ function addCharacter(event) {
 
     event.preventDefault();
 
-    const data = {"name": document.getElementById("input-character").value};
+    const data = {
+        "name": document.getElementById("input-character").value,
+        "charPic": document.getElementById("input-img").files[0],
+    };
+
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("charPic", data.charPic);
 
     fetch('http://localhost:3000/addcharacter/', {
         method: 'POST', // or 'PUT'
         headers: {
-            'Content-Type': 'application/json',
             'token': localStorage.getItem("token"),
         },
-        body: JSON.stringify(data),
+        body: formData,
     })
         .then((response) => response.json())
         .then((data) => {

@@ -103,14 +103,14 @@
 
             <div class="searcharea" id="searcharea">
                 <form class="searchtext" id="searchtext" onsubmit="validate(event)">
-                    <input name="" id="searchbar" class="searchbar" cols="30" rows="10" placeholder="Digite um nome de um personagem de Star Wars:" required></input>
+                    <input type="search" id="searchbar" class="searchbar" cols="30" rows="10" placeholder="Digite um nome de um personagem de Star Wars:" required></input>
                     
                     <div class="conteudo-nome" conteudo-nome></div>
                     <p class="search-error" id="search-error">Não foi encontrado nenhum personagem com esse nome!</p>
                     <template resultado-pesquisa>
-                            
                             <label class="label-nome">Nome: </label>
                             <p class="texto-nome"></p>
+                            <img src="">
                     </template>
                     
                     <button type="submit" class="botao-consulta">CONSULTAR</button>
@@ -121,6 +121,7 @@
                         <span class="character-success" id="character-success">Character created!</span>
                     </div>
                     <input type="text" class="input-character" id="input-character" required></input>
+                    <input type="file" class="input-img" id="input-img" required></input>
                     <button type="submit" class="character-btn">SUBMIT CHARACTER</button>
                 </form>
 
