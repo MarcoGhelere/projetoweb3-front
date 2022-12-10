@@ -1,3 +1,5 @@
+const serverlink = "http://localhost:3000/";
+
 function login(event){
     //Codigo da funcao fetch, obtida de: 
     //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_json_data
@@ -9,7 +11,7 @@ function login(event){
         "password": document.getElementById("password-input").value,
     };
 
-    fetch('http://localhost:3000/login/login', {
+    fetch(serverlink + 'login/login', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -53,7 +55,7 @@ function validate(event){
     event.preventDefault();
 
     const search = document.getElementById("searchbar").value;
-    const urlapi= "http://localhost:3000/swapi/?name=" + search; //Passando o link para a API
+    const urlapi= serverlink+ "swapi/?name=" + search; //Passando o link para a API
 
     const resultadoPesquisa = document.querySelector("[resultado-pesquisa]");
     const containerNome = document.querySelector("[conteudo-nome]");
@@ -103,7 +105,7 @@ function register(event) {
         "password": document.getElementById("password-input-reg").value,
     };
     
-    fetch('http://localhost:3000/login/register', {
+    fetch(serverlink + 'login/register', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -171,7 +173,7 @@ function addCharacter(event) {
     formData.append("name", data.name);
     formData.append("charPic", data.charPic);
 
-    fetch('http://localhost:3000/addcharacter/', {
+    fetch(serverlink + 'addcharacter/', {
         method: 'POST', // or 'PUT'
         headers: {
             'token': localStorage.getItem("token"),
@@ -193,7 +195,6 @@ function addCharacter(event) {
         })
         .catch((error) => {
             console.error('Error:', error);
-            
         });
 }
 
